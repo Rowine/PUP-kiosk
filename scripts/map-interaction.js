@@ -91,69 +91,64 @@ const MapInteraction = {
   },
 };
 
-// Initialize the map interaction when the DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  MapInteraction.init();
-});
+// const CoordinateTracker = {
+//   elements: {
+//     coordDisplay: null,
+//   },
 
-const CoordinateTracker = {
-  elements: {
-    coordDisplay: null,
-  },
+//   init() {
+//     // Create coordinate display element
+//     const coordDiv = document.createElement("div");
+//     coordDiv.className = "coord-display";
+//     coordDiv.innerHTML = `
+//           <div class="coord-display__content">
+//               <span>X: <span id="coord-x">0</span></span>
+//               <span>Y: <span id="coord-y">0</span></span>
+//               <button id="coord-copy" class="coord-display__button">Copy Coords</button>
+//           </div>
+//       `;
+//     document.body.appendChild(coordDiv);
 
-  init() {
-    // Create coordinate display element
-    const coordDiv = document.createElement("div");
-    coordDiv.className = "coord-display";
-    coordDiv.innerHTML = `
-          <div class="coord-display__content">
-              <span>X: <span id="coord-x">0</span></span>
-              <span>Y: <span id="coord-y">0</span></span>
-              <button id="coord-copy" class="coord-display__button">Copy Coords</button>
-          </div>
-      `;
-    document.body.appendChild(coordDiv);
+//     // Store elements
+//     this.elements.coordDisplay = coordDiv;
+//     this.elements.coordX = document.getElementById("coord-x");
+//     this.elements.coordY = document.getElementById("coord-y");
+//     this.elements.copyButton = document.getElementById("coord-copy");
 
-    // Store elements
-    this.elements.coordDisplay = coordDiv;
-    this.elements.coordX = document.getElementById("coord-x");
-    this.elements.coordY = document.getElementById("coord-y");
-    this.elements.copyButton = document.getElementById("coord-copy");
+//     // Add event listeners
+//     document
+//       .querySelector(".map__image")
+//       .addEventListener("mousemove", this.updateCoordinates.bind(this));
+//     this.elements.copyButton.addEventListener(
+//       "click",
+//       this.copyCoordinates.bind(this)
+//     );
+//   },
 
-    // Add event listeners
-    document
-      .querySelector(".map__image")
-      .addEventListener("mousemove", this.updateCoordinates.bind(this));
-    this.elements.copyButton.addEventListener(
-      "click",
-      this.copyCoordinates.bind(this)
-    );
-  },
+//   updateCoordinates(event) {
+//     const rect = event.target.getBoundingClientRect();
+//     const x = Math.round(event.clientX - rect.left);
+//     const y = Math.round(event.clientY - rect.top);
 
-  updateCoordinates(event) {
-    const rect = event.target.getBoundingClientRect();
-    const x = Math.round(event.clientX - rect.left);
-    const y = Math.round(event.clientY - rect.top);
+//     this.elements.coordX.textContent = x;
+//     this.elements.coordY.textContent = y;
+//   },
 
-    this.elements.coordX.textContent = x;
-    this.elements.coordY.textContent = y;
-  },
+//   copyCoordinates() {
+//     const x = this.elements.coordX.textContent;
+//     const y = this.elements.coordY.textContent;
+//     navigator.clipboard.writeText(`${x},${y}`);
 
-  copyCoordinates() {
-    const x = this.elements.coordX.textContent;
-    const y = this.elements.coordY.textContent;
-    navigator.clipboard.writeText(`${x},${y}`);
-
-    // Show feedback
-    this.elements.copyButton.textContent = "Copied!";
-    setTimeout(() => {
-      this.elements.copyButton.textContent = "Copy Coords";
-    }, 1000);
-  },
-};
+//     // Show feedback
+//     this.elements.copyButton.textContent = "Copied!";
+//     setTimeout(() => {
+//       this.elements.copyButton.textContent = "Copy Coords";
+//     }, 1000);
+//   },
+// };
 
 // Initialize the coordinate tracker
 document.addEventListener("DOMContentLoaded", () => {
   MapInteraction.init();
-  CoordinateTracker.init();
+  // CoordinateTracker.init();
 });

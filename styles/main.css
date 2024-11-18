@@ -1,21 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
 /* Base Styles */
 :root {
-  --color-primary: hsl(24.6 95% 53.1%);
-  --color-secondary: #ffdab9;
-  --color-text: #333333;
-  --color-text-light: #666666;
+  --color-primary: #3498db;
+  --color-secondary: #ecf0f1;
+  --color-text: #2c3e50;
+  --color-text-light: #7f8c8d;
   --color-background: #ffffff;
-  --color-border: #e0e0e0;
-  --border-radius: 8px;
+  --color-border: #bdc3c7;
+  --border-radius: 12px;
   --spacing-unit: 8px;
-  --tooltip-width: 300px;
+  --tooltip-width: 320px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -46,6 +48,8 @@ body {
 /* Map Components */
 .map {
   position: relative;
+  margin: auto;
+  width: 50%;
 }
 
 .map__wrapper {
@@ -62,7 +66,7 @@ body {
 }
 
 .map__image {
-  max-width: 500%;
+  max-width: 100%;
   height: auto;
   display: block;
 }

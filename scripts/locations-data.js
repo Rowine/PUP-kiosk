@@ -186,7 +186,7 @@ const LocationsData = {
     },
     {
       id: "29",
-      name: "Public imagestroom",
+      name: "Public restroom",
       image: "",
       description: "",
     },

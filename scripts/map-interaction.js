@@ -64,20 +64,17 @@ const MapInteraction = {
     let left = x + 20;
     let top = y - 250;
 
+
     // Prevent tooltip from going off-screen
     if (left + tooltipRect.width > viewportWidth) {
       left = x - tooltipRect.width - 20;
     }
 
+
     if (top < 0) {
       top = y + 20;
     } else if (top + tooltipRect.height > viewportHeight) {
       top = y - tooltipRect.height - 20;
-    }
-
-    // Special case for NALALRC (id: 9)
-    if (location.id === "9") {
-      top = y + 50;
     }
 
     // Apply position
